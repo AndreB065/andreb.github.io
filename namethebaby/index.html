@@ -1,13 +1,32 @@
-<!Doctype html lang="en">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Guess the baby's name</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name That Baby</title>
+    <script src="possible_names.js"></script>
 </head>
 <body>
-<h1>Hello World!</h1>
+    <div class="container">
+        <header>
+            <h1>Name That Baby</h1>
+            <h2><i>What shall we call her?</i></h2>
+        </header>
+        <div class="container">
+            <h2>Here are some options for names:</h2>
+            <div id="flashcard-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner" id="baby-name"></div>
+                <a class="carousel-control-prev" href="#flashcard-carousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Back</span>
+                </a>
+                <a class="carousel-control-next" href="#flashcard-carousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+    </div>
+    <footer>&copy;&nbsp;Andre</footer>
 </body>
 </html>
