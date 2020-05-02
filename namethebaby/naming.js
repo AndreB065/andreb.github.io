@@ -112,3 +112,25 @@ function showNames(){
 }
 
 showNames();
+
+//Hide the list, and show the game selection panel
+$('#add-name').on('click',function(){
+  addNewName();
+});
+
+function addNewName(){
+	let new_name = document.getElementById('new-name').value.toLowerCase();
+	let input_index = mynames.indexOf(new_name);
+
+	if(new_name == ""){
+		document.getElementById("new-name").focus();
+	}else if(input_index >= 1){
+		alert("\"" +new_name+ "\"" + " is already in the list!");
+	}else{
+		mynames.push(new_name);
+		
+		//showNames();
+		document.getElementById("new-name").value = "";
+		document.getElementById("new-name").focus();
+	}
+}

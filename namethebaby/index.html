@@ -13,19 +13,27 @@
 		<link rel="stylesheet" href="mybaby.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Name That Baby</h1>
+      <h4><i>What shall we call her?</i></h4>
+    </header>
     <div class="container">
-        <header>
-            <h1>Name That Baby</h1>
-            <h2><i>What shall we call her?</i></h2>
-        </header>
-        <div class="container">
-            <h2>Here are some options for names:</h2>
-            <div id="baby-name"></div>
-            <div class="col col-6 btn btn-md">Back</div>
-            <div class="col col-6 btn btn-md">Next</div>
+      <h3>Here are some options for names:</h3>
+      <div class="container">
+        <div id="baby-name"></div>
+        <div class="row">
+          <div class="col col-6 btn btn-md">Back</div>
+          <div class="col col-6 btn btn-md">Next</div>
         </div>
+      </div>
+      <div class="row">
+        <input type="text" name="new-name" class="col" id="new-name">
+        <button class="btn btn-primary btn-md col" id="add-name">Add New Name</button>
+      </div>
     </div>
-    <script src="naming.js"></script>
-    <footer>&copy;&nbsp;Andre Burte</footer>
+  </div>
+  <script src="naming.js"></script>
+  <footer>&copy;&nbsp;Andre Burte</footer>
 </body>
 </html>
