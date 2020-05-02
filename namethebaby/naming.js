@@ -104,20 +104,20 @@ var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amel
 
     console.log(mynames.length);
 
+mynames.forEach(showNames);
+
 function showNames(){
-  var i;
-  for(i=0;i<mynames.length;i++){
-    name_list.innerHTML = "Names go here " + mynames[i];
-  }	
+  name_list.innerHTML = "Names go here " + mynames + "<br>";
 }
 
 showNames();
 
-//Hide the list, and show the game selection panel
+//Click button to add new name to the list
 $('#add-name').on('click',function(){
   addNewName();
 });
 
+//Add new name to the list
 function addNewName(){
 	let new_name = document.getElementById('new-name').value.toLowerCase();
 	let input_index = mynames.indexOf(new_name);
@@ -134,3 +134,4 @@ function addNewName(){
 		document.getElementById("new-name").focus();
 	}
 }
+
