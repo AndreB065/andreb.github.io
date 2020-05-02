@@ -1,4 +1,5 @@
 var name_list = document.getElementById('names-list');
+var index = 0;
 
 var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amelia','Harper','Evelyn',
     'Abigail','Emily','Elizabeth','Mila','Ella','Avery','Sofia','Camila','Aria','Scarlett',
@@ -110,11 +111,19 @@ function showNames(){
   name_list.innerHTML = "Names go here " + mynames + "<br>";
 }
 
-showNames();
-
 //Click button to add new name to the list
 $('#add-name').on('click',function(){
   addNewName();
+});
+
+//Show the next name on click
+$('#next').on('click',function(){
+  showNextName();
+});
+
+//Show the previous name on click
+$('#back').on('click',function(){
+  showPreviousName();
 });
 
 //Add new name to the list
@@ -135,3 +144,22 @@ function addNewName(){
 	}
 }
 
+function showNextName(){
+  let max = (mynames.length - 1);
+
+  if (index == max){
+    index = 0;
+  }
+  
+  name_list.innerHTML = mynames[index];
+  index++;
+}
+
+function showPreviousName(){
+  if (index == 0){
+    index = (mynames.length - 1)
+  }
+
+  name_list.innerHTML = mynames[index];
+  index--;
+}
