@@ -105,10 +105,10 @@ var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amel
 
     console.log(mynames.length);
 
-name_list.innerHTML = "<div>" + mynames[0] + "</div>";
+name_list = "<div>" + mynames[0] + "</div>";
 
 function showNames(){
-  name_list.innerHTML = "Names go here " + mynames + "<br>";
+  name_list = "Names go here " + mynames + "<br>";
 }
 
 //Click button to add new name to the list
