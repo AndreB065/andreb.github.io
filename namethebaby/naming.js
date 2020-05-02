@@ -105,8 +105,10 @@ var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amel
     console.log(mynames.length);
 
 function showNames(){
-	name_list.innerHTML = "Names go here " + mynames;
-	
+  var i;
+  for(i=0;i<mynames.length;i++){
+    name_list.innerHTML = "Names go here " + mynames[i];
+  }	
 }
 
 showNames();
