@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  
-  var name_list = document.getElementById('names-list');
-  var index = 0;
+  if(localStorage.length == 0){
+    localStorage.setItem('saved_names','');
+  }
 
   var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amelia','Harper','Evelyn',
       'Abigail','Emily','Elizabeth','Mila','Ella','Avery','Sofia','Camila','Aria','Scarlett',
@@ -105,64 +105,152 @@ $(document).ready(function(){
       'Azaria','Emmarie','Esperanza','Kailyn','Aiyana','Keilani','Austyn','Whitley','Elina','Kimora',
       'Maliah'];
 
-      console.log(mynames.length);
+    var possible_names = [];
 
-  name_list = mynames[0];
-
-  function showNames(){
-    name_list = "Names go here " + mynames + "<br>";
-  }
-
-  //Click button to add new name to the list
-  $('#add-name').on('click',function(){
-    addNewName();
-  });
-
-  //Show the next name on click
-  $('#next').on('click',function(){
-    showNextName();
-  });
-
-  //Show the previous name on click
-  $('#back').on('click',function(){
-    showPreviousName();
-  });
-
-  //Add new name to the list
-  function addNewName(){
-    let new_name = document.getElementById('new-name').value.toLowerCase();
-    let input_index = mynames.indexOf(new_name);
-
-    if(new_name == ""){
-      document.getElementById("new-name").focus();
-    }else if(input_index >= 1){
-      alert("\"" +new_name+ "\"" + " is already in the list!");
-    }else{
-      mynames.push(new_name);
-      
-      //showNames();
-      document.getElementById("new-name").value = "";
-      document.getElementById("new-name").focus();
-    }
-  }
-
-  function showNextName(){
-    let max = (mynames.length - 1);
-
-    if (index == max){
-      index = 0;
+    $('#baby-name').html("<h2>" + mynames[index].toUpperCase() + "</h2>" +
+      `&nbsp;<input type="radio" name="choice" id="yes">
+        <label for="yes">Yes</label>
+        &nbsp;<input type="radio" name="choice" id="no">
+            <label for="no">No</label>
+        &nbsp;<input type="radio" name="choice" id="maybe">
+        <label for="maybe">Maybe</label>`
+    );
+    
+    function nextName(){
+    checkRadio();
+    
+      if(index == mynames.length - 1){
+        index = 0;
+      }else{
+      index++
     }
     
-    name_list.innerHTML = mynames[index];
-    index++;
-  }
-
-  function showPreviousName(){
-    if (index == 0){
-      index = (mynames.length - 1)
+    $('#baby-name').html("<h2>" + mynames[index].toUpperCase() + "</h2>" +
+      `&nbsp;<input type="radio" name="choice" id="yes">
+        <label for="yes">Yes</label>
+        &nbsp;<input type="radio" name="choice" id="no">
+            <label for="no">No</label>
+        &nbsp;<input type="radio" name="choice" id="maybe">
+        <label for="maybe">Maybe</label>`
+      );
     }
-
-    name_list.innerHTML = mynames[index];
-    index--;
-  }
-});
+    
+    function previousName(){
+      if (index == 0){
+        index = (mynames.length - 1);
+      }else{
+      index--;
+    }
+  
+      $('#baby-name').html("<h2>" + mynames[index].toUpperCase() + "</h2>" +
+      `&nbsp;<input type="radio" name="choice" id="yes">
+        <label for="yes">Yes</label>
+        &nbsp;<input type="radio" name="choice" id="no">
+            <label for="no">No</label>
+        &nbsp;<input type="radio" name="choice" id="maybe">
+        <label for="maybe">Maybe</label>`
+    );
+    }
+    
+    function checkRadio(){
+    let current_name = mynames[index];
+    let from_store = getFromStore();
+    
+    from_store = from_store ? from_store.split(',') : [];
+    
+    if($('#yes').is(':checked') || $('#maybe').is(':checked')){
+      let input_index = from_store.indexOf(current_name);
+      console.log(from_store);
+        if(input_index >= 0){
+        console.log('In store ' + input_index);
+      return;
+        }else{
+        from_store.push(current_name);
+      saveToStore(from_store.toString());
+      }		  
+    }
+    }
+    
+    $('#next').on('click',nextName);
+    
+    $('#back').on('click',previousName);
+    
+    /*
+    $('#add-name').on('click',addNewName);
+    
+    
+    var new_name;
+    var already_there = 0;
+    
+    //Add new name to the list
+    function addNewName(){
+      let new_name = document.getElementById('new-name').value.toLowerCase();
+      let input_index = possible_names.indexOf(new_name);
+  
+      if(new_name == ""){
+        document.getElementById("new-name").focus();
+      }else if(input_index >= 1){
+      already_there = 1;
+        alertMsg(new_name);
+      console.log(input_index);
+      }else{
+        mynames.push(new_name);
+      alertMsg(new_name);
+      
+        //showNames();
+        document.getElementById("new-name").value = "";
+        document.getElementById("new-name").focus();
+      }
+    }
+    
+    //Message alert
+    function clearMsg(){
+      $('#msg').html("");
+      already_there = 0;
+    }
+    
+    function alertMsg(name){
+      if(already_there == 1){
+      $('#msg').html(name + " is already in the list!");
+      }else{
+      $('#msg').html(name + " was added to the list!");
+      }
+      setTimeout(clearMsg,2000);
+    }
+    */
+    
+    $('#show-names-btn').on('click',function(){
+      let get_names = getFromStore().trim().split(','); 
+      let separate_names = "";
+      
+      for (var i = 0; i < get_names.length; i++) {
+      if(i%5 == 0){
+        separate_names += '<br>'
+      }
+      
+        separate_names += get_names[i] + " * ";
+      }
+      separate_names += ' * ';
+      
+      if($('#show-names-btn').html() == 'Hide Names'){
+      $('#names-list').html('');
+      $('#show-names-btn').html('Show Names');
+      }
+      else{
+      $('#names-list').html(separate_names);
+      $('#show-names-btn').html('Hide Names');
+      }
+    });
+    
+    function saveToStore(p){
+    localStorage.setItem('saved_names',p);
+    }
+    
+    function getFromStore(){
+    let store = localStorage.getItem('saved_names');
+    return store;
+    }
+    
+  });
+  
+  //localStorage.clear()
