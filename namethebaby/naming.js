@@ -3,6 +3,8 @@ $(document).ready(function(){
     localStorage.setItem('saved_names','');
   }
 
+  var index = 0;
+
   var mynames = ['Emma','Olivia','Ava','Isabella','Sophia','Charlotte','Mia','Amelia','Harper','Evelyn',
       'Abigail','Emily','Elizabeth','Mila','Ella','Avery','Sofia','Camila','Aria','Scarlett',
       'Victoria','Madison','Luna','Grace','Chloe','Penelope','Layla','Riley','Zoey','Nora',
