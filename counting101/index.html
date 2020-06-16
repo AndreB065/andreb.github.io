@@ -1,0 +1,55 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Counting 101</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="101style.css">
+	</head>
+	<body>
+		<div class="container-fluid" id="main-container">
+			<div class="col flash-pic" id="left-pic"><audio autoplay id="left-sound"></audio></div>
+			<div class="container" id="outer-container">
+				<header class="row" id="intro">
+					<h1 class="col">Please enter your name here: 
+					<input type="text" class="col-md-2 col-sm-6" id="name" size=5><br>
+					and then click a button to start.</h1>
+				</header>
+				<p id="start-error"></p>
+				<div class="row">
+					<button class="btn btn-secondary col" id="cb1">Counting by 1's</button>
+					<button class="btn btn-secondary col" id="cb2">Counting by 2's</button>
+					<button class="btn btn-secondary col" id="cb5">Counting by 5's</button>
+					<button class="btn btn-secondary col" id="cb10">Counting by 10's</button>
+				</div>
+				<div class="container">
+					<div class="container" id="inner-container">
+						<h1 class="col" id="heading"></h1> 
+						<p id="num"></p>
+						<p id="good-job"></p>
+						<p id="correct-ans"></p>
+						<label for="ans" >The Next number is:</label>
+						<input type="text" id="ans" size=1>
+						<div id="timer"></div><br>
+						<div class="btn btn-success" id="check">Check Answer</div>
+						<div class="btn btn-primary" id="reset">Reset</div>
+						<p id="result"></p>
+					</div>
+				</div>
+			</div>
+			<div class="col flash-pic" id="right-pic"><audio autoplay id="right-sound"></audio></div>
+		</div>
+		<audio autoplay loop id="bgm">
+		</audio>
+		<audio autoplay id="cheers">
+		</audio>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="myscript.js"></script>
+		<script src="animate.js"></script>
+	</body>
+</html>
