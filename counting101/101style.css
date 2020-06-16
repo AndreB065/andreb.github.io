@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+	text-align: center;
+	font-size: 22px;
+}
+
+#outer-container {
+	padding: 40px;
+	border: 2px solid black;
+	margin-top: 40px;
+}
+
+#inner-container {
+	padding: 30px;
+	border: 2px solid black;
+	margin-top: 20px;
+}
+
+#num {
+	color: green;
+	font-size: 36px;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+#good-job {
+	font-size: 25px;
+}
+
+input {
+	padding: 5px;
+	font-style: ;
+	font-weight: bolder;
+}
+
+button {
+	margin: 5px 10px;
+}
+
+#left-pic {
+	background: url(assets/images/unicorn-head-right.png);
+	background-size: cover;
+	position: fixed;
+	left: 0;
+}
+
+#right-pic {
+	background: url(assets/images/unicorn-head-slight-left.png);
+	background-size: cover;
+	position: fixed;
+	right: 0;
+}
+
+.flash-pic {
+	width: 320px;
+	height: 434px;
+	background-position: center;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+}
+
+#welcome {
+	width: 98%;
+	height: 100%;
+	background: #fff;
+	color: blue;
+	position: absolute;
+	top: 0;
+	opacity: 1;
+	margin: auto;
+}
+
+#my-welcome {
+	font-size: 2em;
+	margin-top: 40px;
+}
+
+#welcome img {
+	width: ;
+	height: 82%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+	border: 1px solid red;
+	border-radius: 50%;
+	box-shadow: 10px 20px 25px 5px #444;
+}
