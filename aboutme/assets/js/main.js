@@ -31,4 +31,9 @@
 			offset: function() { return $nav.height(); }
 		});
 
+	//Nav change.
+		$window.scroll(function(){
+			$($nav).toggleClass('active', $(this).scrollTop() > 50);
+		});
+
 })(jQuery);
