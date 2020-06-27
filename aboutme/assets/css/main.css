@@ -2376,6 +2376,7 @@ input, select, textarea {
 					top: 20px;
 					margin: -50px 0 50px -40px;
 					width: auto;
+					box-shadow: 5px 5px #555;
 				}
 
 				.box.style1 {
