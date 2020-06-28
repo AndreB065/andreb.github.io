@@ -1917,12 +1917,19 @@ input, select, textarea {
 		padding: 1.5em;
 		min-height: 320px;
 		max-height: 320px;
-		box-shadow: 10px 10px 15px #444;
+		box-shadow: none;
 		margin: 1em;
 	}
 
 		.box.style1 {
+			transition: all 0.5s;
 			padding: 3em 2em 3.5em 2em;
+			box-shadow: 10px 10px 15px #444;
+		}
+
+		.box.style1:hover {
+			padding: 3em 2em 3.5em 2em;
+			box-shadow: none;
 		}
 
 			.box.style1 h3 {
@@ -1938,6 +1945,14 @@ input, select, textarea {
 			position: relative;
 			margin-bottom: 0;
 			width: 100%;
+		}
+
+		.box.style2 {
+			transition: all 0.4s;
+		}
+
+		.box.style2:hover {
+			box-shadow: 10px 10px 15px #444;
 		}
 
 /* Fix for Different sized icons */
