@@ -1,0 +1,48 @@
+body {
+	text-align: center;
+}
+
+#mynums {
+	display: inline-block;
+}
+
+#buttons {
+	width: auto;
+	height: 90px;
+	text-align: center;
+	vertical-align: middle;
+	border: 2px solid black;
+}
+
+#special-num {
+	width: 36px;
+	height: 32px;
+	color: red;
+	background: gray;
+	font-family: arial;
+	font-size: 24px;
+	font-weight: bold;
+	border: 3px solid silver;
+	border-radius: 40px;
+	display: inline-block;
+}
+
+.nums{
+	width: 320px;
+	height: 68px;
+	font-size: 22px;
+	border: 1px solid black;
+	border-radius: 30px;
+	display: inline-block;
+	margin: 5px;
+}
+
+button {
+	width: 140px;
+	height: 50px;
+	font-size: 20px;
+	border: outset;
+	border-radius: 30px;
+	padding: 3px;
+	margin: 20px;
+}

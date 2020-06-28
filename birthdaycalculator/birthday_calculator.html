@@ -1,0 +1,53 @@
+<!Doctype HTML>
+<html lang="en">
+<head>
+	<title>Birthday Calculator</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Birthday calculator">
+	<meta name="author" content="Andre Burte">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="birthday_calculator.css">
+	<script src="birthday_calculator.js"></script>
+</head>
+<body id="body">
+	<main>
+		<!--<p id="arrow-container">To begin, touch the faint box over there <span id="arrow">&#8680;</span></p>-->
+		<div id="container">
+			<h1>Welcome!!!</h1>
+			<p>Let me say congratulations, first off, for making it this far.<br>  
+			I know the last few years haven't been a cake walk in the park.<br>
+			Still, you're here now, and that's all that matters.</p>
+			<p>Let's see what we can do about getting you to your next birthday, shall we.</p>
+			<p><b>Enter your birth date below, minus the year of course.</b><br>  <em>Gotta keep some things a mystery, right?!</em></p>
+			<span id="inputs">
+			<label for="month">Month:</label>
+			<input type="text" name="month" id="birth-month" size="2">&emsp;
+			<label for="day">Day:</label>
+			<input type="text" name="day" id="birth-day" size="2" min="1" max="31">
+			</span>
+
+		<!--Where the magic happens-->
+			<div id="calculationOutput"></div>
+
+		<!--Calculate button area-->
+			<div id="button-area">
+				<p>Click the button below to see when your next birthday is:</p>
+				<button id="birthday-checker" onclick="calculateNextBirthday()">Calculate Birthday</button>
+				<p><span id="refresh"><em>(To try again from scratch, refresh your screen, 
+				or enter a different date and click the button above to see the results.)</em></span></p>
+			</div>
+		</div>
+		<img id="your-day">
+		
+	</main>
+
+	<!--Change background-->
+	<div id="btn-container">
+		<button onclick="changeBackground()">Change BG Set 1</button>
+		<button onclick="changeBackgroundGif()">Change BG Set 2</button>
+	</div>
+	<footer>
+		&copy;2017, &nbspAndre Burte
+	</footer>
+</body>
+</html>

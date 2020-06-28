@@ -1,0 +1,178 @@
+body{
+  padding: 32vh 0;
+  background: url(assets/407.jpg),Forestgreen;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 40px;
+}
+
+.heart {
+  animation: heartbeat 2.5s infinite;
+  background-color: red;
+  display: inline-block;
+  height: 100px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  position: absolute; 
+  left: 45%; top: 45%;
+  width: 100px;
+  box-shadow: 5px 20px 35px black;
+  z-index: 2;
+}
+
+.heart:before {
+  animation: leftbeat 5s infinite;
+  transform: rotate(45deg);
+  content: "";
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px black;
+  background-color: red;
+  border-radius: 50%;
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  color: green;
+  padding-top: 40px;
+}
+
+.heart:after {
+  animation: rightbeat 5s infinite;
+  transform: rotate(45deg);
+  content: "";
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px black;
+  background-color: red;
+  border-radius: 50%;
+  height: 100px;
+  position: absolute;
+  width: 100px;
+  color: green;
+  padding-top: 40px;
+}
+
+.heart:before {
+  top: -46px;
+  left: 0;
+}
+
+.heart:after {
+  left: 46px;
+  top: 0;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 )
+      rotate(-45deg);
+      opacity: 0;    
+  }
+  10%
+  {
+    transform: scale( 1.5 )
+      rotate(-45deg);
+      opacity: 0.2;  
+  }
+  20%
+  {
+    transform: scale( 2 )
+      rotate(-45deg);
+      opacity: 0.4;
+  }
+  30%
+  {
+    transform: scale( 2.5 )
+      rotate(-45deg);
+      opacity: 0.6;
+  }
+  40%
+  {
+    transform: scale( 2.8 )
+      rotate(-45deg);
+      opacity: 0.8;
+  }
+}
+
+@keyframes leftbeat
+{
+  0%
+  {
+    content: "";
+  }
+  10%
+  {
+    content: "I";
+  }
+  30%
+  {
+    content: "";
+  }
+  40%
+  {
+    content: "U";
+  }
+  60%
+  {
+    content:"";
+  }
+}
+
+@keyframes rightbeat
+{
+  0%
+  {
+    content: "";
+  }
+  25%
+  {
+    content: "Love";
+  }
+  40%
+  {
+    content: "";
+  }
+  50%
+  {
+    content: "Cendy";
+  }
+}
+
+/*@keyframes changebackground
+{
+  0%
+  {
+    background: ;
+  }
+
+  10%
+  {
+    background: ;
+  }
+
+  20%
+  {
+    background-image: ;
+  }
+  30%
+  {
+    background: ;
+  }
+  
+  40%
+  {
+    background: ;
+  }
+}*/
+
+audio {
+  z-index: -1;
+}
