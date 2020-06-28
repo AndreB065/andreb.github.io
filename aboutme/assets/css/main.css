@@ -1922,15 +1922,9 @@ input, select, textarea {
 	}
 
 		.box.style1 {
-			transition: all 0.5s;
 			padding: 3em 2em 3.5em 2em;
-			box-shadow: 10px 10px 15px #444;
 		}
 
-		.box.style1:hover {
-			padding: 3em 2em 3.5em 2em;
-			box-shadow: none;
-		}
 
 			.box.style1 h3 {
 				margin-bottom: 0.5em;
@@ -1949,10 +1943,11 @@ input, select, textarea {
 
 		.box.style2 {
 			transition: all 0.4s;
+			box-shadow: 10px 10px 15px #444;
 		}
 
 		.box.style2:hover {
-			box-shadow: 10px 10px 15px #444;
+			box-shadow: none;
 		}
 
 /* Fix for Different sized icons */
