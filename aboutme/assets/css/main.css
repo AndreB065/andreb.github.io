@@ -1630,6 +1630,7 @@ input, select, textarea {
 		.image img {
 			display: block;
 			width: 100%;
+			max-height: 212px;
 		}
 
 		.image.fit {
@@ -1946,12 +1947,7 @@ input, select, textarea {
 		}
 
 		.box.style2 {
-			transition: all 0.4s;
 			box-shadow: 10px 10px 15px #444;
-		}
-
-		.box.style2:hover {
-			box-shadow: none;
 		}
 
 /* Fix for Different sized icons */
