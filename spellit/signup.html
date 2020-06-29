@@ -1,0 +1,56 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<title>Spell It</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Andre Burte">
+		<meta name="description" content="Home page">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" type="image/png" href="assets/images/detective.png">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand col-2" href="home.html"><div onclick="reloadPage();">Cisca's Spelling Game</div></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse col-md-10" id="navbarSupportedContent">
+				<div class="col-md-9">
+				</div>
+				<div id="pic-container" class="col-md">
+					<name id="my-name"></name>
+					<img src="assets/images/detective.png" id="my-pic" class="img-thumbnail">
+				</div>
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="mx-auto container bg-dark" style="width: 600px; padding: 20px; margin: 25px; opacity: 0.9;">
+				<div class="col-12" >
+					<h1 id="signup-message">Create New User</h1>
+					<hr style="background: white;">
+					<form class="align-items-center" id="form" action="" novalidate>
+						<label for="name" class="">Enter Your Name:</label>
+						<input type="text" class="form-control" id="name" name="name">
+						<label for="pass1" class="">Create Password:</label>
+						<input type="password" class="form-control" id="pass1" name="pass1">
+						<label for="pass2" class="">Re-enter Password:</label>
+						<input type="password" class="form-control" id="pass2" name="pass2"><br>
+						<input type="submit" class="btn-lg btn-success" value="Submit" onclick="checkPass();">
+						<input type="reset" class="btn-lg btn-warning">
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer>
+			&copy;Andre Burte
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="process.js"></script>
+	</body>
+</html>
