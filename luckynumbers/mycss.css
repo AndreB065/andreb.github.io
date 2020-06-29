@@ -2,21 +2,28 @@ body {
 	text-align: center;
 }
 
-#mynums {
-	display: inline-block;
+.container {
+	display: grid;
 }
 
-#buttons {
+#mynums {
+	display: block;
 	width: auto;
-	height: 90px;
-	text-align: center;
-	vertical-align: middle;
-	border: 2px solid black;
+	height: auto;
+}
+
+#buttons-container {
+	width: 30%;
+	height: auto;
+	padding: 2px;
+	/*border: 2px solid black;*/
+	margin: 0 auto;
 }
 
 #special-num {
-	width: 36px;
-	height: 32px;
+	width: auto;
+	height: auto;
+	padding: 2px;
 	color: red;
 	background: gray;
 	font-family: arial;
@@ -38,11 +45,24 @@ body {
 }
 
 button {
-	width: 140px;
 	height: 50px;
 	font-size: 20px;
 	border: outset;
 	border-radius: 30px;
 	padding: 3px;
-	margin: 20px;
+	margin-top: 5px;
+}
+
+button:hover {
+	border: inset;
+	background-color: red;
+}
+
+button:active {
+	background-color: lightgreen;
+}
+
+.game-selector {
+	display: block;
+	width: 100%;
 }

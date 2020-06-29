@@ -9,16 +9,17 @@
 	<script src="script.js"></script>
 </head>
 <body>
-	<h1>Your Lucky Numbers:</h1>
-	<div id="buttons">
-	<button id="pick3" onclick="gameClicked(this);">Pick 3</button>
-	<button id="pick4" onclick="gameClicked(this);">Pick 4</button>
-	<button id="fantasy5" onclick="gameClicked(this);">Fantasy 5</button>
-	<button id="lotto" onclick="gameClicked(this);">Lotto</button>
-	<button id="powerball" onclick="gameClicked(this);">Powerball</button>
-	<button id="mega" onclick="gameClicked(this);">Mega Money</button>
+	<div class="container">
+		<h1>Your Lucky Numbers:</h1>
+		<div id="buttons-container">
+			<button id="pick3" class="game-selector" onclick="gameClicked(this);">Pick 3</button>
+			<button id="pick4" class="game-selector" onclick="gameClicked(this);">Pick 4</button>
+			<button id="fantasy5" class="game-selector" onclick="gameClicked(this);">Fantasy 5</button>
+			<button id="lotto" class="game-selector" onclick="gameClicked(this);">Lotto</button>
+			<button id="powerball" class="game-selector" onclick="gameClicked(this);">Powerball</button>
+			<button id="mega" class="game-selector" onclick="gameClicked(this);">Mega Money</button>
+		</div>
 	</div>
-	<hr>
 <!--	<label for="pick3">Pick 3</label>
 	<input type="radio" id="pick3" name="game-name" value="Pick 3" onchange="chooseRadio();">
 	<label for="pick4">Pick 4</label>

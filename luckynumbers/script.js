@@ -39,7 +39,7 @@ function shuffleBalls(c){
 }
 
 function changeButtons(){
-	document.getElementById('buttons').innerHTML = "<button onclick='reloadPage();'>Reset</button>";
+	document.getElementById('buttons-container').innerHTML = "<button onclick='reloadPage();'>Reset</button>";
 }
 
 function reloadPage(){
