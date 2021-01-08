@@ -12,9 +12,9 @@ function checkAnswers(){
 	var inputs = document.getElementById("game-questions").elements;
     	var count  = 0;
     	for (var i = 0; i < inputs.length; i++) {
-		if (inputs[i].type == 'radio' && inputs[i].checked) count++;
+			if (inputs[i].type == 'radio' && inputs[i].checked) count++;
     	}
-	if(count < 10){
+	if(count < 20){
 		alert('You must answer all 20 questions!');
 		return false;
 	}

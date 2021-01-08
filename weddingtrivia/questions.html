@@ -1,0 +1,269 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+        <title>Wedding Trivia</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Andre Burte">
+        <meta name="description" content="Multiple choice game start page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous"> -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <link type="text/css" rel="stylesheet" href="includes/style.css">
+        <script src="validate.js"></script>
+	</head>
+	<body>
+		<header style='position:fixed;top:0px;height:auto;width:95%;color:white;background-color:blue;'>
+			<span style="font-size:26px;margin-left:10px;">Questions</span>
+			<span style='font-size:24px;margin-right:10px;float:right;'>Timer: <span id="timer"></span></span>
+		</header>
+		<hr>
+		<main style='padding-top:20px'>
+			<p>Answer the following questions by choosing the correct answer:<br>
+			<em style="font-size:14px">(The clock is ticking, and remember, speed counts almost as much as having the correct answers.)</em></p>
+			<form id="game-questions" action="process.js" method="post" onsubmit="return checkAnswers();">
+				<input type="hidden" id="player1">
+				<input type="hidden" id="player2">
+				<input type="hidden" id="start-time">
+				<ol>
+					<li>
+						<h4>What is Cendy's nationality?<h4>
+						<p><input id="q1ans1" name="q1ans1" type="radio" value="A">
+						<label for="q1ans1">Jamaican</label></p>
+						<p><input id="q1ans2" name="q1ans1" type="radio" value="B">
+						<label for="q1ans2">English</label></p>
+						<p><input id="q1ans3" name="q1ans1" type="radio" value="C">
+						<label for="q1ans3">Chinese</label></p>
+						<p><input id="q1ans4" name="q1ans1" type="radio" value="D">
+						<label for="q1ans4">Haitian</label></p>
+					</li><br>
+					<li>
+						<h4>How many siblings does Cendy have?</h4>
+						<p><input id="q2ans1" name="q2ans2" type="radio" value="A">
+						<label for="q2ans1">2</label></p>
+						<p><input id="q2ans2" name="q2ans2" type="radio" value="B">
+						<label for="q2ans2">3</label></p>
+						<p><input id="q2ans3" name="q2ans2" type="radio" value="C">
+						<label for="q2ans3">4</label></p>
+						<p><input id="q2ans4" name="q2ans2" type="radio" value="D">
+						<label for="q2ans4">5</label>
+					</li><br>
+					<li>
+						<h4>What day is Cendy's birthday?</h4>
+						<p><input id="q3ans1" name="q3ans3" type="radio" value="A">
+						<label for="q3ans1">January 28</label></p>
+						<p><input id="q3ans2" name="q3ans3" type="radio" value="B">
+						<label for="q3ans2">February 29</label></p>
+						<p><input id="q3ans3" name="q3ans3" type="radio" value="C">
+						<label for="q3ans3">March 17</label></p>
+						<p><input id="q3ans4" name="q3ans3" type="radio" value="D">
+						<label for="q3ans4">April 1</label>
+					</li><br>
+					<li>
+						<h4>Who makes a Mach3?</h4>
+						<p><input id="q4ans1" name="q4ans4" type="radio" value="A">
+						<label for="q4ans1">Gillette</label></p>
+						<p><input id="q4ans2" name="q4ans4" type="radio" value="B">
+						<label for="q4ans2">Porche</label></p>
+						<p><input id="q4ans3" name="q4ans4" type="radio" value="C">
+						<label for="q4ans3">Samsung</label></p>
+						<p><input id="q4ans4" name="q4ans4" type="radio" value="D">
+						<label for="q4ans4">Jay-Z</label>
+					</li><br>
+					<li>
+						<h4>What is Cendy's favorite color?</h4>
+						<p><input id="q5ans1" name="q5ans5" type="radio" value="A">
+						<label for="q5ans1">Blue</label></p>
+						<p><input id="q5ans2" name="q5ans5" type="radio" value="B">
+						<label for="q5ans2">Green</label></p>
+						<p><input id="q5ans3" name="q5ans5" type="radio" value="C">
+						<label for="q5ans3">Violet</label></p>
+						<p><input id="q5ans4" name="q5ans5" type="radio" value="D">
+						<label for="q5ans4">Black</label>
+					</li><br>
+					<li>
+						<h4>What is Andre's nationality?</h4>
+						<p><input id="q6ans1" name="q6ans6" type="radio" value="A">
+						<label for="q6ans1">Haitian</label></p>
+						<p><input id="q6ans2" name="q6ans6" type="radio" value="B">
+						<label for="q6ans2">Jamaican</label></p>
+						<p><input id="q6ans3" name="q6ans6" type="radio" value="C">
+						<label for="q6ans3">English</label></p>
+						<p><input id="q6ans4" name="q6ans6" type="radio" value="D">
+						<label for="q6ans4">Floridian</label>
+					</li><br>
+					<li>
+						<h4>How many siblings does Andre have?</h4>
+						<p><input id="q7ans1" name="q7ans7" type="radio" value="A">
+						<label for="q7ans1">1</label></p>
+						<p><input id="q7ans2" name="q7ans7" type="radio" value="B">
+						<label for="q7ans2">3</label></p>
+						<p><input id="q7ans3" name="q7ans7" type="radio" value="C">
+						<label for="q7ans3">5</label></p>
+						<p><input id="q7ans4" name="q7ans7" type="radio" value="D">
+						<label for="q7ans4">2</label>
+					</li><br>
+					<li>
+						<h4>What day is Andre's birthday?</h4>
+						<p><input id="q8ans1" name="q8ans8" type="radio" value="A">
+						<label for="q8ans1">April 18</label></p>
+						<p><input id="q8ans2" name="q8ans8" type="radio" value="B">
+						<label for="q8ans2">January 2</label></p>
+						<p><input id="q8ans3" name="q8ans8" type="radio" value="C">
+						<label for="q8ans3">December 21</label></p>
+						<p><input id="q8ans4" name="q8ans8" type="radio" value="D">
+						<label for="q8ans4">June 17</label>
+					</li><br>
+					<li>
+						<h4>What is the name of the MC for this event?</h4>
+						<p><input id="q9ans1" name="q9ans9" type="radio" value="A">
+						<label for="q9ans1">Marla</label></p>
+						<p><input id="q9ans2" name="q9ans9" type="radio" value="B">
+						<label for="q9ans2">Jacell</label></p>
+						<p><input id="q9ans3" name="q9ans9" type="radio" value="C">
+						<label for="q9ans3">Karen</label></p>
+						<p><input id="q9ans4" name="q9ans9" type="radio" value="D">
+						<label for="q9ans4">Janell</label>
+					</li><br>
+					<li>
+						<h4>What is Andre's favorite color?</h4>
+						<p><input id="q10ans1" name="q10ans10" type="radio" value="A">
+						<label for="q10ans1">Black</label></p>
+						<p><input id="q10ans2" name="q10ans10" type="radio" value="B">
+						<label for="q10ans2">Blue</label></p>
+						<p><input id="q10ans3" name="q10ans10" type="radio" value="C">
+						<label for="q10ans3">Purple</label></p>
+						<p><input id="q10ans4" name="q10ans10" type="radio" value="D">
+						<label for="q10ans4">Red</label></p>
+					</li><br>
+					<li>
+						<h4>Which of these is a not real author?</h4>
+						<p><input id="q11ans1" name="q11ans11" type="radio" value="A">
+						<label for="q11ans1">Stuart Woods</label></p>
+						<p><input id="q11ans2" name="q11ans11" type="radio" value="B">
+						<label for="q11ans2">El James</label></p>
+						<p><input id="q11ans3" name="q11ans11" type="radio" value="C">
+						<label for="q11ans3">James Patterson</label></p>
+						<p><input id="q11ans4" name="q11ans11" type="radio" value="D">
+						<label for="q11ans4">Sally Rider</label></p>
+					</li><br>
+					<li>
+						<h4>How many years did Andre and Cendy date before the proposal?</h4>
+						<p><input id="q12ans1" name="q12ans12" type="radio" value="A">
+						<label for="q12ans1">2</label></p>
+						<p><input id="q12ans2" name="q12ans12" type="radio" value="B">
+						<label for="q12ans2">3</label></p>
+						<p><input id="q12ans3" name="q12ans12" type="radio" value="C">
+						<label for="q12ans3">4</label></p>
+						<p><input id="q12ans4" name="q12ans12" type="radio" value="D">
+						<label for="q12ans4">5</label>
+					</li><br>
+					<li>
+						<h4>When did Andre  propose to Cendy?</h4>
+						<p><input id="q13ans1" name="q13ans13" type="radio" value="A">
+						<label for="q13ans1">March 2016</label></p>
+						<p><input id="q13ans2" name="q13ans13" type="radio" value="B">
+						<label for="q13ans2">May 2017</label></p>
+						<p><input id="q13ans3" name="q13ans13" type="radio" value="C">
+						<label for="q13ans3">April 2015</label></p>
+						<p><input id="q13ans4" name="q13ans13" type="radio" value="D">
+						<label for="q13ans4">June 2018</label></p>
+					</li><br>
+					<li>
+						<h4>What is Andre and Cendy's favorite pastime?</h4>
+						<p><input id="q14ans1" name="q14ans14" type="radio" value="A">
+						<label for="q14ans1">Watching Movies</label></p>
+						<p><input id="q14ans2" name="q14ans14" type="radio" value="B">
+						<label for="q14ans2">Playing Sports</label></p>
+						<p><input id="q14ans3" name="q14ans14" type="radio" value="C">
+						<label for="q14ans3">Playing Board Games</label></p>
+						<p><input id="q14ans4" name="q14ans14" type="radio" value="D">
+						<label for="q14ans4">Going to the Beach</label></p>
+					</li><br>
+					<li>
+						<h4>What is Andre and Cendy's favorite type of food?</h4>
+						<p><input id="q15ans1" name="q15ans15" type="radio" value="A">
+						<label for="q15ans1">Carribean</label></p>
+						<p><input id="q15ans2" name="q15ans15" type="radio" value="B">
+						<label for="q15ans2">Spanish</label></p>
+						<p><input id="q15ans3" name="q15ans15" type="radio" value="C">
+						<label for="q15ans3">Italian</label></p>
+						<p><input id="q15ans4" name="q15ans15" type="radio" value="D">
+						<label for="q15ans4">Greek</label></p>
+					</li><br>
+					<li>
+						<h4>What is Andre and Cendy's favorite restaurant?</h4>
+						<p><input id="q16ans1" name="q16ans16" type="radio" value="A">
+						<label for="q16ans1">Chili's</label></p>
+						<p><input id="q16ans2" name="q16ans16" type="radio" value="B">
+						<label for="q16ans2">Olive Garden</label></p>
+						<p><input id="q16ans3" name="q16ans16" type="radio" value="C">
+						<label for="q16ans3">TGI Friday's</label></p>
+						<p><input id="q16ans4" name="q16ans16" type="radio" value="D">
+						<label for="q16ans4">Golden Crust</label></p>
+					</li><br>
+					<li>
+						<h4>Which of these is Andre and Cendy's favorite game?</h4>
+						<p><input id="q17ans1" name="q17ans17" type="radio" value="A">
+						<label for="q17ans1">Uno</label></p>
+						<p><input id="q17ans2" name="q17ans17" type="radio" value="B">
+						<label for="q17ans2">Bingo</label></p>
+						<p><input id="q17ans3" name="q17ans17" type="radio" value="C">
+						<label for="q17ans3">Charades</label></p>
+						<p><input id="q17ans4" name="q17ans17" type="radio" value="D">
+						<label for="q17ans4">Chess</label></p>
+					</li><br>
+					<li>
+						<h4>Which of these is Andre and Cendy's favorite TV Show?</h4>
+						<p><input id="q18ans1" name="q18ans18" type="radio" value="A">
+						<label for="q18ans1">Game of Thrones</label></p>
+						<p><input id="q18ans2" name="q18ans18" type="radio" value="B">
+						<label for="q18ans2">Insecure</label></p>
+						<p><input id="q18ans3" name="q18ans18" type="radio" value="C">
+						<label for="q18ans3">Breaking Bad</label></p>
+						<p><input id="q18ans4" name="q18ans18" type="radio" value="D">
+						<label for="q18ans4">Shameless</label></p>
+					</li><br>
+					<li>
+						<h4>What is the name of this banquet hall?</h4>
+						<p><input id="q19ans1" name="q19ans19" type="radio" value="A">
+						<label for="q19ans1">Oakland Park</label></p>
+						<p><input id="q19ans2" name="q19ans19" type="radio" value="B">
+						<label for="q19ans2">Crystal Dreams</label></p>
+						<p><input id="q19ans3" name="q19ans19" type="radio" value="C">
+						<label for="q19ans3">Cristol Dreams</label></p>
+						<p><input id="q19ans4" name="q19ans19" type="radio" value="D">
+						<label for="q19ans4">Banquet Hall</label></p>
+					</li><br>
+					<li>
+						<h4>Which of these processes makes your hair straight?</h4>
+						<p><input id="q20ans1" name="q20ans20" type="radio" value="A">
+						<label for="q20ans1">Braiding</label></p>
+						<p><input id="q20ans2" name="q20ans20" type="radio" value="B">
+						<label for="q20ans2">Relaxing</label></p>
+						<p><input id="q20ans3" name="q20ans20" type="radio" value="C">
+						<label for="q20ans3">Hot Curling</label></p>
+						<p><input id="q20ans4" name="q20ans20" type="radio" value="D">
+						<label for="q20ans4">Gelling</label></p>
+					</li>	
+				</ol>
+				<input type="submit" value="Submit Answers">
+			</form>
+		</main>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function(){
+
+				console.log("my jquery is reaty");
+				setInterval(function(){
+					var timestr = $('#timer').html();
+					var currentTime = 0;
+					if(timestr.length > 0) currentTime = parseInt(timestr);
+					currentTime++;
+					$('#timer').html(currentTime);		
+				},1000);
+			});
+		</script>
+	</body>
